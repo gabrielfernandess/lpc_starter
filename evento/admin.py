@@ -1,3 +1,7 @@
 from django.contrib import admin
+from evento.models import TipoAtividade, Atividade, Evento
 
-# Register your models here.
+
+admin.site.register(TipoAtividade)
+admin.site.register(Atividade)
+admin.site.register(Evento)
