@@ -16,12 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from evento.views import inicio, addTipoAtividade, listaTipoAtividades, removeTipoAtividade
+from evento.views import inicio, addTipoAtividade, listaTipoAtividades
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', inicio, name='inicio'),
     url(r'^tipoatividades/', listaTipoAtividades, name='listaTipo'),
     url(r'^tipoatividades/add$', addTipoAtividade, name='addTipo'),
-    url(r'^tipoatividades/delete$', removeTipoAtividade, name='deleteTipo'),
 ]
