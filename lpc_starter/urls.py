@@ -16,11 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from evento.views import inicio, addTipoAtividade, listaTipoAtividades
+from evento.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', inicio, name='inicio'),
-    url(r'^tipoatividades/', listaTipoAtividades, name='listaTipo'),
-    url(r'^tipoatividades/add$', addTipoAtividade, name='addTipo'),
+    
 ]
