@@ -21,5 +21,9 @@ from evento.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', inicio, name='inicio'),
-    
+    url(r'^eventos/$', listaEvento, name='listaEvento'),
+    url(r'^eventosCientificos/$', listaEventoCientifico, name='listaEventoCientifico'),
+    url(r'^artigoCientifico/$', listaArtigoCientifico, name='listaArtigoCientifico'),
+    url(r'^pessoas/$', listaPessoa, name='listaPessoa'),
+
 ]

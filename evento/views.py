@@ -14,6 +14,7 @@ def inicio(request):
                     <li><a href='/autores'>Autores</a></li>
                     <li><a href='/pessoasFisicas'>Pessoas Fisicas</a></li>
                     <li><a href='/pessoasJuridicas'>Pessoas Juridicas</a></li>
+                    <li><a href='/inscricao'>Inscricao</a></li>
 
                 </ul>
             """
@@ -21,10 +22,26 @@ def inicio(request):
 
 
 def listaAutor(request):
-    html = "<h1>Lista de Tipo de Atividades</h1>"
+    html = "<h1>Lista de Autores</h1>"
     lista= Autores.objects.all()
     for tipo in lista:
         html += '<li>{}</li>'.format(tipo.curriculo)
+
+    return HttpResponse(html)
+
+def listaEvento(request):
+    html = "<h1>Lista de Eventos</h1>"
+    lista= Evento.objects.all()
+    for tipo in lista:
+        html += '<li>{}</li>'.format(tipo.nome)
+
+    return HttpResponse(html)
+
+def listaEventoCientifico(request):
+    html = "<h1>Lista de Eventos Cientificos</h1>"
+    lista= EventoCientifico.objects.all()
+    for tipo in lista:
+        html += '<li>{}</li>'.format(tipo.issn)
 
     return HttpResponse(html)
 
@@ -33,6 +50,15 @@ def listaArtigoCientifico(request):
     lista = ArtigoCientifico.objects.all()
     for tipo in lista:
         html += '<li>{}</li>'.format(tipo.titulo)
+
+    return HttpResponse(html)
+
+
+def listaPessoa(request):
+    html = "<h1>Lista de pessoa</h1>"
+    pessoa = Pessoa.objects.all()
+    for tipo in pessoa:
+        html += '<li>{}</li>'.format(tipo.nome)
 
     return HttpResponse(html)
 
@@ -46,6 +72,9 @@ def addautor(request):
         return HttpResponse('Autor Inserido com sucesso')
     else:
         return HttpResponse('Falha na inserção do autor')
+
+
+
 
 @csrf_exempt
 def addArtigoCientifico(request):
