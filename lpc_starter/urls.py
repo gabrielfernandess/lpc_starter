@@ -23,9 +23,9 @@ urlpatterns = [
     url(r'^$', inicio, name='inicio'),
     url(r'^eventos/$', listaEvento, name='listaEvento'),
     url(r'^eventosCientificos/$', listaEventoCientifico, name='listaEventoCientifico'),
-    url(r'^artigoCientifico/$', listaArtigoCientifico, name='listaArtigoCientifico'),
+    url(r'^artigosCientificos/$', listaArtigoCientifico, name='listaArtigoCientifico'),
     url(r'^pessoas/$', listaPessoa, name='listaPessoa'),
     url(r'^autores/$', listaAutor, name='listaAutor'),
-    
+
 
 ]
