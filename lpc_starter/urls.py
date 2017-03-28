@@ -25,5 +25,7 @@ urlpatterns = [
     url(r'^eventosCientificos/$', listaEventoCientifico, name='listaEventoCientifico'),
     url(r'^artigoCientifico/$', listaArtigoCientifico, name='listaArtigoCientifico'),
     url(r'^pessoas/$', listaPessoa, name='listaPessoa'),
+    url(r'^autores/$', listaAutor, name='listaAutor'),
+    
 
 ]

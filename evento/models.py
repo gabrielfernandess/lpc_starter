@@ -8,14 +8,12 @@ class ArtigoCientifico(models.Model):
     autores = models.ForeignKey('Autor')
 
     def save(self, *args, **kwargs):
-        self.evento = self.evento.upper()
-        self.autores = self.local.upper()
+        self.titulo = self.titulo.upper()
+
+        return super(ArtigoCientifico, self).save(*args, **kwargs)
 
     def __str__(self):
-        return '{}'.format(self.titulo)
-
-    def __unicode__(self):
-        return self.id
+        return self.titulo
 
 class Inscricao(models.Model):
     nome = models.ForeignKey('PessoaFisica')

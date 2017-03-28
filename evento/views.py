@@ -23,7 +23,7 @@ def inicio(request):
 
 def listaAutor(request):
     html = "<h1>Lista de Autores</h1>"
-    lista= Autores.objects.all()
+    lista= Autor.objects.all()
     for tipo in lista:
         html += '<li>{}</li>'.format(tipo.curriculo)
 
