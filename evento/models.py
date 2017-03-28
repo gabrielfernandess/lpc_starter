@@ -22,14 +22,12 @@ class Inscricao(models.Model):
     tipoDaInscricao = models.CharField('Tipo da Inscricao', max_length=200)
 
     def save(self, *args, **kwargs):
-        self.nome = self.nome.upper()
-        self.evento = self.evento.upper()
+        self.tipoDaInscricao = self.tipoDaInscricao.upper()
+
+        return super(Inscricao, self).save(*args, **kwargs)
 
     def __str__(self):
-        return '{}'.format(self.nome)
-
-    def __unicode__(self):
-        return self.id
+        return self.tipoDaInscricao
 
 class Evento(models.Model):
     nome = models.CharField('nome', max_length=200)
